@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@color/background" 
+    android:gravity="center"
+    android:padding="5dip" >
+    
+    <TextView 
+        android:id="@+id/deluxe_search_success_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/searching_text" 
+        android:layout_marginBottom="25dip"
+        android:textSize="18sp"/>
+    
+    <ListView 
+        android:id="@+id/library_item_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+  		android:dividerHeight="10.0sp"/>
+    
+</LinearLayout>

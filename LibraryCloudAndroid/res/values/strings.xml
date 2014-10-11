@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Library Cloud Browser</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="main_title">Library Cloud Browser</string>
+    
+    <string name="action_settings">Settings</string>
+    <string name="action_help">Help</string>
+    <string name="action_search">Search</string>
+    <string name="action_saved_searches">Saved Searches</string>
+    <string name="action_saved_items">Saved Items</string>
+    
+    <string name="label_button_about">About Library Cloud Browser</string>
+    <string name="label_button_browse">Browse</string>
+    <string name="label_button_browse_deluxe">Deluxe Browse</string>
+    <string name="label_button_search_title">Search by keyword</string>
+    <string name="label_button_title_search">Search</string>
+    <string name="label_button_title_reset">Reset</string>
+    
+    <string name="label_text_search_instructions">Input title keyword to search for</string>
+    <string name="label_text_item_title">Title</string>
+    <string name="label_text_item_author">Author(s)</string>
+    <string name="label_text_item_description">Description</string>
+    <string name="label_text_item_locations">Locations</string>
+    
+    <string name="hint_title_search">Enter keyword</string>
+   
+    <string name="title_activity_about">About Library Browser</string>
+    <string name="about_text">About the Library Browser</string>
+	
+    <string name="searching_text">Searching&#8230;</string>
+    <string name="search_results_text">Results&#8230;</string>
+    
+    <string name="title_activity_search_results">Search Results</string>
+    <string name="title_activity_deluxe_search_results">Search Results List</string>
+    <string name="title_activity_search_input">Search Library Cloud</string>
+    <string name="title_activity_item_details">Library Item Details</string>
+    
+    <string name="menu_saved_searches">Saved Searches</string>
+    <string name="menu_preferences">Preferences</string>
+    
+    <string name="text_library_cloud_about">The Library Cloud Browser tool enables you to search the Harvard University Library Cloud initiative 
+        database through the use of your mobile device.</string>
+    
+</resources>

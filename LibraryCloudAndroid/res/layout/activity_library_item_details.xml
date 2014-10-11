@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" 
+	    android:background="@color/background" 
+	    android:gravity="left"
+	    android:padding="30dip" >
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_text_item_title"
+        android:layout_marginBottom="5dip"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+    
+    <TextView 
+        android:id="@+id/item_title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip"
+        style="@style/displayItemText"/>
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_text_item_author"
+        android:layout_marginBottom="5dip"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+    
+    <TextView 
+        android:id="@+id/item_author_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip"
+        style="@style/displayItemText"/>
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_text_item_description"
+        android:layout_marginBottom="5dip"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+    
+    <TextView 
+        android:id="@+id/item_description_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip"
+        style="@style/displayItemText"/>
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_text_item_locations"
+        android:layout_marginBottom="5dip"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+    
+    <TextView 
+        android:id="@+id/item_locations_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip"
+        style="@style/displayItemText"/>
+    
+	</LinearLayout>
+</ScrollView>
+    

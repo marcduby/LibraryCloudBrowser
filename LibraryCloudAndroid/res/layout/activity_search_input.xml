@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@color/background" 
+    android:gravity="center"
+    android:padding="30dip" >
+
+    <TextView 
+        android:id="@+id/search_text_instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_text_search_instructions" 
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="25dip"
+        android:textSize="18sp"/>
+    
+    <EditText 
+        android:id="@+id/edit_search_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_title_search"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/search_text_instructions"
+        android:ems="10"/>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edit_search_title"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+    
+        <Button
+            android:id="@+id/button_search_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="fill_horizontal"
+            android:text="@string/label_button_title_search" />
+        
+        <Button
+            android:id="@+id/button_reset_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="fill_horizontal"
+            android:text="@string/label_button_title_reset" />
+        
+    </LinearLayout>
+    
+</RelativeLayout>

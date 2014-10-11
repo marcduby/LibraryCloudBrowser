@@ -1,0 +1,70 @@
+
+- What to learn
+  - fragments
+  - action bar
+  - menu
+  - sql lite db
+  - preferences
+  
+
+- To get done to launch
+  - preferences page
+  - keep data and search on rotate
+  - save searches
+    - just the terms, not the results
+    - clone then modify search
+      - name search
+  - implement main activity menu
+  - save items
+    - all information about the items
+  - singleton pattern for services (better than static methods)
+  - paging trough results
+  - handle multiple word searches
+    - write integration test
+      
+  - search
+    - add number results
+    - pagination
+    - overall search object
+    - next/previous on display screen for individual items
+    
+    
+  - gui
+    - action bar
+    - menu
+    
+  - refactor
+    - search results object
+    - search object
+      - saveable
+    - save search result item
+    - put in view holder object for better performance
+      - first check in to github
+      
+    
+    
+  
+- external to do
+  - get github working
+  - sign up with google for dev license
+  - signup with 
+  - winterdeveloper twitter
+  - winterdev domain
+  - 
+
+
+Done:
+  + connect to REST service
+  + use test project to test JSON object
+  + display title, cat num
+  + create adapter for results
+  + handle multiple results
+  + scroll the results page
+  + handle empty results
+
+
+Skipped:
+  - install Gson
+
+
+  

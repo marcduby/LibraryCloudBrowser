@@ -1,0 +1,40 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.winterdev.librarycloud.SearchResultsActivity" >
+
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="100"
+        android:title="@string/action_search"
+		android:icon="@drawable/wd_action_search"
+        app:showAsAction="ifRoom|withText"/>
+    
+    <item
+        android:id="@+id/action_saved_searches"
+        android:orderInCategory="100"
+        android:title="@string/action_saved_searches"
+		android:icon="@drawable/wd_action_saved_searches"
+        app:showAsAction="ifRoom|withText"/>
+    
+    <item
+        android:id="@+id/action_saved_items"
+        android:orderInCategory="100"
+        android:title="@string/action_saved_items"
+		android:icon="@drawable/wd_action_saved_items"
+        app:showAsAction="ifRoom|withText"/>
+    
+    <item
+        android:id="@+id/action_help"
+        android:orderInCategory="100"
+        android:title="@string/action_help"
+		android:icon="@drawable/wd_action_help"
+        app:showAsAction="ifRoom|withText"/>
+    
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never"/>
+
+</menu>
