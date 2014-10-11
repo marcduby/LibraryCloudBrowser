@@ -22,6 +22,8 @@
   - handle multiple word searches
     - write integration test
       
+  - save items and seearches
+  
   - search
     - add number results
     - pagination
