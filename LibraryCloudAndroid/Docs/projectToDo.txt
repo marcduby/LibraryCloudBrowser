@@ -22,7 +22,7 @@
   - handle multiple word searches
     - write integration test
       
-  - save items and seearches
+  - save items and searches
   
   - search
     - add number results
