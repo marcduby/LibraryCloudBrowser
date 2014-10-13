@@ -17,7 +17,6 @@
   - implement main activity menu
   - save items
     - all information about the items
-  - singleton pattern for services (better than static methods)
   - paging trough results
   - handle multiple word searches
     - write integration test
@@ -63,6 +62,8 @@ Done:
   + handle multiple results
   + scroll the results page
   + handle empty results
+  + singleton pattern for services (better than static methods)
+  + handle multiple word searches
 
 
 Skipped:
