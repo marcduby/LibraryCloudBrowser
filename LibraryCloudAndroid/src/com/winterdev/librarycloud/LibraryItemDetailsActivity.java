@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.TextView;
 
 public class LibraryItemDetailsActivity extends Activity {
-
+	// instance variables
+	LibraryJsonService libraryJsonService = LibraryJsonService.getLibraryJsonService();
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +30,7 @@ public class LibraryItemDetailsActivity extends Activity {
      */
     protected void displayItemAtPosition(int position) {
     	// get the library item
-    	LibraryItem item = LibraryJsonService.getLastSearchListItem(position);
+    	LibraryItem item = this.libraryJsonService.getLastSearchListItem(position);
     	
     	if (item != null) {
         	// set the data on the text views

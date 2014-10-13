@@ -2,7 +2,11 @@ package com.winterdev.librarycloud.domain;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.StringTokenizer;
+
+import android.util.Log;
 
 public class LibrarySearch {
 	// constants related to the LC api
@@ -49,7 +53,8 @@ public class LibrarySearch {
 	public String getSearchUrl(String rootUrl) {
 		// local variables
 		StringBuilder stringBuilder = new StringBuilder();
-
+		String urlString;
+		
 		// add in the url
 		stringBuilder.append(rootUrl);
 
@@ -61,15 +66,29 @@ public class LibrarySearch {
 		
 		// for each key, add the search item to the url
 		for (Iterator<String> keyIterator = this.searchMap.keySet().iterator(); keyIterator.hasNext();) {
+			// get the key and value pair
 			String key = keyIterator.next();
-			stringBuilder.append("&");
-			stringBuilder.append(key);
-			stringBuilder.append("=");
-			stringBuilder.append(this.searchMap.get(key));
+			String value = this.searchMap.get(key);
+			
+			// tokenize the value string of necessary
+			// TODO - test for space first for better speed
+			StringTokenizer tokenizer = new StringTokenizer(value); 
+			while(tokenizer.hasMoreElements()) {
+				stringBuilder.append("&");
+				stringBuilder.append(key);
+				stringBuilder.append("=");
+				stringBuilder.append(tokenizer.nextElement());
+			}
 		}
+
+		// get the final string
+		urlString = stringBuilder.toString();
+		
+		// log the url called
+		Log.i(this.getName(), "search for url: " + urlString);
 		
 		// return the url
-		return stringBuilder.toString();
+		return urlString;
 	}
 	
 	// auto generated methods

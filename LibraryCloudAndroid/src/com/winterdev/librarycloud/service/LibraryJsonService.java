@@ -14,14 +14,42 @@ import com.winterdev.librarycloud.domain.LibraryItem;
 
 public class LibraryJsonService {
 	// cached list of last search
-	private static List<LibraryItem> lastSearchList = null;
+	private List<LibraryItem> lastSearchList = null;
 	
-	public static List<LibraryItem> getItems(String jsonString) throws LibraryException {
+	// static singleton library json service
+	private static LibraryJsonService libraryJsonService;
+	
+	/**
+	 * singleton method to return link to static library json service
+	 * 
+	 * @return
+	 */
+	public static LibraryJsonService getLibraryJsonService() {
+		if (libraryJsonService == null) {
+			libraryJsonService = new LibraryJsonService();
+		}
+		
+		return libraryJsonService;
+	}
+
+	/**
+	 * method to build a list of library items from json response to library json service call
+	 * 
+	 * @param jsonString						the json response of the call
+	 * @return									a list of library items
+	 * @throws LibraryException					if there is an error
+	 */
+	public List<LibraryItem> getItems(String jsonString) throws LibraryException {
 		List<LibraryItem> itemList = new ArrayList<LibraryItem>();
 		JSONObject rootJson = null;
 		JSONObject itemObject = null;
 		LibraryItem item = null;
 		try {
+			
+			if (jsonString == null) {
+				throw new LibraryException("got null json return string");
+			}
+			
 			rootJson = new JSONObject(jsonString);
 			
 			// get the item arrays
@@ -77,7 +105,13 @@ public class LibraryJsonService {
 		return itemList;
 	}
 
-	public static LibraryItem getLastSearchListItem(int position) {
+	/**
+	 * method to retrieve the library item in the cached item list
+	 * 
+	 * @param position
+	 * @return
+	 */
+	public LibraryItem getLastSearchListItem(int position) {
 		// local variables
 		LibraryItem item = null;
 		
@@ -98,7 +132,7 @@ public class LibraryJsonService {
 	 * @param item
 	 * @return
 	 */
-	protected static LibraryItem createLibraryItemFromJson(JSONObject jsonObject) throws LibraryException {
+	protected LibraryItem createLibraryItemFromJson(JSONObject jsonObject) throws LibraryException {
 		LibraryItem item = new LibraryItem();
 
 		try {
@@ -147,7 +181,7 @@ public class LibraryJsonService {
 	 * @param item
 	 * @throws LibraryException
 	 */
-	protected static void addRecordLocationList(JSONObject jsonObject, LibraryItem item) throws LibraryException {
+	protected void addRecordLocationList(JSONObject jsonObject, LibraryItem item) throws LibraryException {
 		// find the record info object
 		
 		// if if exists, look for the location array/object
@@ -177,7 +211,7 @@ public class LibraryJsonService {
 	 * @param item
 	 * @throws LibraryException
 	 */
-	protected static void addRecordLocation(JSONObject locationObject, LibraryItem item) throws LibraryException {
+	protected void addRecordLocation(JSONObject locationObject, LibraryItem item) throws LibraryException {
 		try {
 			if (locationObject != null) {
 				String building = locationObject.getString(LibraryItem.TAG_BUILDING);
@@ -200,7 +234,7 @@ public class LibraryJsonService {
 	 * @return
 	 * @throws JSONException
 	 */
-	protected static JSONObject getFirstJsonObjectIfArray(JSONObject jsonObject, String tagString) throws JSONException {
+	protected JSONObject getFirstJsonObjectIfArray(JSONObject jsonObject, String tagString) throws JSONException {
 		JSONArray jsonArray = jsonObject.optJSONArray(tagString);
 		JSONObject returnObject = null;
 		

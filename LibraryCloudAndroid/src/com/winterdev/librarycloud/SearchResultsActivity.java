@@ -37,7 +37,9 @@ import android.widget.TextView;
 import android.os.Build;
 
 public class SearchResultsActivity extends ActionBarActivity {
-
+	// instance variables
+	LibraryJsonService libraryJsonService = LibraryJsonService.getLibraryJsonService();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -147,7 +149,7 @@ public class SearchResultsActivity extends ActionBarActivity {
 			// assume JSON string, so parse
 	
 			try {
-				List<LibraryItem> itemList = LibraryJsonService.getItems(result);
+				List<LibraryItem> itemList = libraryJsonService.getItems(result);
 //					JSONObject json = new JSONObject(result);
 //					String title = json.getString("title");
 //					resultsView.setText(title);

@@ -49,7 +49,10 @@ public class DeluxeSearchResultsActivity extends ActionBarActivity implements On
 	private final String searchJsonUrl 	= "http://api.lib.harvard.edu/v2/items.json";
 	private final String searchUrl 		= "http://api.lib.harvard.edu/v2/items.json?title=";
 	private final String searchLimit 	= "&limit=25";
+	
+	// instance variables
 	private LibrarySearchService librarySearchService = LibrarySearchService.getLibrarySearchService();
+	private LibraryJsonService libraryJsonService = LibraryJsonService.getLibraryJsonService();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +113,13 @@ public class DeluxeSearchResultsActivity extends ActionBarActivity implements On
 		searchInnerClass.execute(searchUrlString);
 	}
 
+	/**
+	 * method to call the json service with the input parameters
+	 * 
+	 * @param urlString
+	 * @return
+	 * @throws Exception
+	 */
 	protected String getLibrarySearchResults(String urlString) throws Exception {
 		StringBuilder builder = new StringBuilder();
 		HttpClient httpClient = new DefaultHttpClient();
@@ -257,7 +267,7 @@ public class DeluxeSearchResultsActivity extends ActionBarActivity implements On
 			// assume JSON string, so parse
 	
 			try {
-				List<LibraryItem> itemList = LibraryJsonService.getItems(result);
+				List<LibraryItem> itemList = libraryJsonService.getItems(result);
 //					JSONObject json = new JSONObject(result);
 //					String title = json.getString("title");
 //					resultsView.setText(title);
