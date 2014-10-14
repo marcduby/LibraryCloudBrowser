@@ -108,9 +108,16 @@ public class DeluxeSearchResultsActivity extends ActionBarActivity implements On
 	 */
 	protected void searchWithLibrarySearchBean(LibrarySearch librarySearch) {
 		DeluxeSearchResultsClass searchInnerClass = new DeluxeSearchResultsClass();
-		String searchUrlString = librarySearch.getSearchUrl(this.searchJsonUrl);
-		Log.i(this.getClass().getName(), "searching with search bean with url: " + searchUrlString);
-		searchInnerClass.execute(searchUrlString);
+		
+		try {
+			String searchUrlString = librarySearch.getSearchUrl(this.searchJsonUrl);
+			
+			Log.i(this.getClass().getName(), "searching with search bean with url: " + searchUrlString);
+			searchInnerClass.execute(searchUrlString);
+			
+		} catch (LibraryException exception) {
+			this.setSearchSuccessText("Ooops, we had an issue...");		
+		}
 	}
 
 	/**

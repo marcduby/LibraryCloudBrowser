@@ -1,5 +1,7 @@
 package com.winterdev.librarycloud.domain;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -50,7 +52,7 @@ public class LibrarySearch {
 	 * @param rootUrl						the root url for the search
 	 * @return								the search url
 	 */
-	public String getSearchUrl(String rootUrl) {
+	public String getSearchUrl(String rootUrl) throws LibraryException {
 		// local variables
 		StringBuilder stringBuilder = new StringBuilder();
 		String urlString;
@@ -69,16 +71,22 @@ public class LibrarySearch {
 			// get the key and value pair
 			String key = keyIterator.next();
 			String value = this.searchMap.get(key);
+			String encodedValue;
 			
-			// tokenize the value string of necessary
-			// TODO - test for space first for better speed
-			StringTokenizer tokenizer = new StringTokenizer(value); 
-			while(tokenizer.hasMoreElements()) {
-				stringBuilder.append("&");
-				stringBuilder.append(key);
-				stringBuilder.append("=");
-				stringBuilder.append(tokenizer.nextElement());
+			// encode the string for URL
+			try {
+				encodedValue = URLEncoder.encode(value, "UTF-8");
+				
+			} catch (UnsupportedEncodingException exception) {
+				String errorMessage = "Got unsupported encoding exception: " + exception.getMessage() + " for string: " + value;
+				Log.e(this.getName(), errorMessage);
+				throw new LibraryException(errorMessage);
 			}
+			
+			stringBuilder.append("&");
+			stringBuilder.append(key);
+			stringBuilder.append("=");
+			stringBuilder.append(encodedValue);
 		}
 
 		// get the final string
