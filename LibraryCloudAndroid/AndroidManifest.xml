@@ -37,11 +37,24 @@
         </activity>
         <activity
             android:name="com.winterdev.librarycloud.SearchInputActivity"
-            android:label="@string/title_activity_search_input" >
+            android:label="@string/title_activity_search_input" 
+            android:launchMode="singleTop">
         </activity>
         <activity
             android:name="com.winterdev.librarycloud.LibraryItemDetailsActivity"
             android:label="@string/title_activity_item_details" >
+        </activity>
+        <activity
+            android:name="com.winterdev.librarycloud.SavedItemsListActivity"
+            android:label="@string/title_activity_saved_items_list" >
+        </activity>
+        <activity
+            android:name="com.winterdev.librarycloud.SavedSearchesListActivity"
+            android:label="@string/title_activity_saved_searches_list" >
+        </activity>
+        <activity
+            android:name="com.winterdev.librarycloud.HelpActivity"
+            android:label="@string/title_activity_help" >
         </activity>
         </application>
 

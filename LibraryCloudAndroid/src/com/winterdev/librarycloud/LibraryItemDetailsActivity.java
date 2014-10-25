@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-public class LibraryItemDetailsActivity extends Activity {
+public class LibraryItemDetailsActivity extends LibraryCloudBaseActivity {
 	// instance variables
 	LibraryJsonService libraryJsonService = LibraryJsonService.getLibraryJsonService();
 	

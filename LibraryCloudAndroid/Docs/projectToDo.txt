@@ -17,6 +17,7 @@
   - implement main activity menu
   - save items
     - all information about the items
+    - make items sortable by title
   - paging trough results
   - handle multiple word searches
     - write integration test

@@ -68,7 +68,7 @@ public class LibraryJsonService {
 						
 					} catch (LibraryException exception) {
 						String errorMessage = "got library item parse error: " + exception.getMessage();
-						Log.v(LibraryJsonService.class.getName(), errorMessage);
+						Log.e(LibraryJsonService.class.getName(), errorMessage);
 						throw new LibraryException(errorMessage);
 					}
 				}

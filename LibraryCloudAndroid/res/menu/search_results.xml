@@ -7,28 +7,28 @@
         android:id="@+id/action_search"
         android:orderInCategory="100"
         android:title="@string/action_search"
-		android:icon="@drawable/wd_action_search"
+		android:icon="@drawable/wd_action_search2"
         app:showAsAction="ifRoom|withText"/>
     
     <item
         android:id="@+id/action_saved_searches"
         android:orderInCategory="100"
         android:title="@string/action_saved_searches"
-		android:icon="@drawable/wd_action_saved_searches"
+		android:icon="@drawable/wd_action_bookmark"
         app:showAsAction="ifRoom|withText"/>
     
     <item
         android:id="@+id/action_saved_items"
         android:orderInCategory="100"
         android:title="@string/action_saved_items"
-		android:icon="@drawable/wd_action_saved_items"
+		android:icon="@drawable/wd_action_folder_check"
         app:showAsAction="ifRoom|withText"/>
     
     <item
         android:id="@+id/action_help"
         android:orderInCategory="100"
         android:title="@string/action_help"
-		android:icon="@drawable/wd_action_help"
+		android:icon="@drawable/wd_action_question"
         app:showAsAction="ifRoom|withText"/>
     
     <item

@@ -1,22 +1,13 @@
 package com.winterdev.librarycloud;
 
-import com.winterdev.librarycloud.R;
-
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.os.Build;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends LibraryCloudBaseActivity implements OnClickListener {
 
 
     @Override
@@ -66,34 +57,6 @@ public class MainActivity extends Activity implements OnClickListener {
     			intent = new Intent(this, SearchInputActivity.class);
     			this.startActivity(intent);
     			break;
-    	}
-    }
-    
-    /**
-     * sets the menu on the activity
-     */
-    public boolean onCreateOptionsMenu(Menu menu) {
-    	this.getMenuInflater().inflate(R.menu.menu_main, menu);
-    	return true;
-    }
-    
-    @Override
-    /**
-     * handle the menu item selection
-     */
-    public boolean onOptionsItemSelected(MenuItem item) {
-    	// handle the menu item selection
-    	switch (item.getItemId()) {
-    	case R.id.menu_saved_searches:
-    		// TODO
-    		// send to the saved searches activity
-    		return true;
-    	case R.id.menu_preferences:
-    		// TODO
-    		// send to the preferences setting activity
-    		return true;
-    	default:
-    		return super.onOptionsItemSelected(item);
     	}
     }
 }

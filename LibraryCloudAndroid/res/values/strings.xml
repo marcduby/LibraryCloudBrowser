@@ -23,6 +23,9 @@
     <string name="label_text_item_author">Author(s)</string>
     <string name="label_text_item_description">Description</string>
     <string name="label_text_item_locations">Locations</string>
+    <string name="label_text_saved_items">Saved Records</string>
+    <string name="label_text_saved_searches">Saved Searches</string>
+    <string name="label_text_help">Information</string>
     
     <string name="hint_title_search">Enter keyword</string>
    
@@ -36,6 +39,9 @@
     <string name="title_activity_deluxe_search_results">Search Results List</string>
     <string name="title_activity_search_input">Search Library Cloud</string>
     <string name="title_activity_item_details">Library Item Details</string>
+    <string name="title_activity_saved_items_list">Saved Library Records</string>
+    <string name="title_activity_saved_searches_list">Saved Library Searches</string>
+    <string name="title_activity_help">Instructions</string>
     
     <string name="menu_saved_searches">Saved Searches</string>
     <string name="menu_preferences">Preferences</string>

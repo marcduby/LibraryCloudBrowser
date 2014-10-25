@@ -6,12 +6,15 @@ import com.winterdev.librarycloud.domain.LibrarySearch;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SearchInputActivity extends Activity implements OnClickListener {
+public class SearchInputActivity extends LibraryCloudBaseActivity implements OnClickListener {
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,4 +57,21 @@ public class SearchInputActivity extends Activity implements OnClickListener {
     	}
     }
 
+	@Override
+	/**
+	 * override creating options menu to set the selected icon on the search menu item
+	 */
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// call parent to inflate menu
+		super.onCreateOptionsMenu(menu);
+		
+		// set the different icons based on what activity it is
+		MenuItem menuItem = (MenuItem)menu.getItem(0);
+//		MenuItem menuItem = (MenuItem)this.findViewById(R.id.action_search);
+		menuItem.setIcon(this.getResources().getDrawable(R.drawable.wd_action_search_selected));
+		Log.i(this.getClass().getName(), "got selected search icon");
+			
+		// return
+		return true;
+	}
 }

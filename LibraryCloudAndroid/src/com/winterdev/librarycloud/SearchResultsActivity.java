@@ -49,7 +49,13 @@ public class SearchResultsActivity extends ActionBarActivity {
 		searchInnerClass.execute("http://api.lib.harvard.edu/v2/items.json?title=peanuts&identifier=29026500");
 	}
 
-	
+	/**
+	 * gets the search results to display
+	 * 
+	 * @param urlString
+	 * @return
+	 * @throws Exception
+	 */
 	protected String getLibrarySearchResults(String urlString) throws Exception {
 		StringBuilder builder = new StringBuilder();
 		HttpClient httpClient = new DefaultHttpClient();
