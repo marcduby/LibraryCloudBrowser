@@ -11,7 +11,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_text_help" 
-        android:layout_marginBottom="25dip"
+        android:layout_marginBottom="15dip"
         android:textSize="24.5sp"/>
     
+       <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            
+    	<LinearLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical" 
+	    android:gravity="top"
+	    android:padding="10dip" >
+	    
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/instruction_text_search" 
+	        android:padding="5dip"
+	        android:drawableLeft="@drawable/wd_action_search_dark"
+	        android:drawablePadding="10dip"
+	        android:textSize="18sp"/>
+	    	    
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/instruction_text_saved_searches" 
+	        android:padding="5dip"
+	        android:drawableLeft="@drawable/wd_action_bookmark_dark"
+	        android:drawablePadding="10dip"
+	        android:textSize="18sp"/>
+	    	    
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/instruction_text_saved_items" 
+	        android:padding="5dip"
+	        android:drawableLeft="@drawable/wd_action_saved_items_dark"
+	        android:drawablePadding="10dip"
+	        android:textSize="18sp"/>
+	    	    
+	    <TextView 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/instruction_text_help" 
+	        android:padding="5dip"
+	        android:drawableLeft="@drawable/wd_action_question_dark"
+	        android:drawablePadding="10dip"
+	        android:textSize="18sp"/>
+	    
+	    </LinearLayout>
+		</ScrollView>
+			    
 </LinearLayout>

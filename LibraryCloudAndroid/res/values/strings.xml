@@ -25,7 +25,7 @@
     <string name="label_text_item_locations">Locations</string>
     <string name="label_text_saved_items">Saved Records</string>
     <string name="label_text_saved_searches">Saved Searches</string>
-    <string name="label_text_help">Information</string>
+    <string name="label_text_help">Help</string>
     
     <string name="hint_title_search">Enter keyword</string>
    
@@ -48,5 +48,10 @@
     
     <string name="text_library_cloud_about">The Library Cloud Browser tool enables you to search the Harvard University Library Cloud initiative 
         database through the use of your mobile device.</string>
+        
+    <string name="instruction_text_search">Use the search icon to start a new library catalog search.</string>
+    <string name="instruction_text_saved_searches">The saved search icon will list the cataloged searches that you have saved on your device.</string>
+    <string name="instruction_text_saved_items">The saved records icon will list the catalog records that you have saved on your device.</string>
+    <string name="instruction_text_help">The help icon will display this screen.</string>
     
 </resources>
