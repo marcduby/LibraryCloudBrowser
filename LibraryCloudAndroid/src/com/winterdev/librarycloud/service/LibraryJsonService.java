@@ -11,6 +11,7 @@ import android.util.Log;
 
 import com.winterdev.librarycloud.domain.LibraryException;
 import com.winterdev.librarycloud.domain.LibraryItem;
+import com.winterdev.librarycloud.domain.LibraryItemLocation;
 
 public class LibraryJsonService {
 	// cached list of last search
@@ -214,11 +215,25 @@ public class LibraryJsonService {
 	protected void addRecordLocation(JSONObject locationObject, LibraryItem item) throws LibraryException {
 		try {
 			if (locationObject != null) {
-				String building = locationObject.getString(LibraryItem.TAG_BUILDING);
+				String buildingCode = locationObject.getString(LibraryItem.TAG_BUILDING);
 				String  callNumber = locationObject.getString(LibraryItem.TAG_CATALOG);
 				
-				// set the location on the object
-				item.addLocation(building + ": " + callNumber);
+				// set the location string on the object
+				item.addLocation(buildingCode + ": " + callNumber);
+				
+				// add the location object on the object
+				LibraryItemLocation locationItemObject = new LibraryItemLocation();
+				locationItemObject.setLocationCode(buildingCode);
+				locationItemObject.setCallNumber(callNumber);
+				
+				// get the library name
+				if (buildingCode != null) {
+					locationItemObject.setLocationName(LibrarySearchService.getLibrarySearchService().getLibraryName(buildingCode));
+				}
+	
+				// add the object
+				item.addLocationObject(locationItemObject);
+//				Log.i(this.getClass().getName(), "added item location object: " + locationItemObject);
 			}
 			
 		} catch (JSONException exception) {

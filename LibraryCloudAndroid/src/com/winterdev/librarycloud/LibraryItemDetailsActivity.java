@@ -47,7 +47,8 @@ public class LibraryItemDetailsActivity extends LibraryCloudBaseActivity {
     		
         	// set the data on the locations text view
     		TextView locationsView = (TextView)this.findViewById(R.id.item_locations_text);
-    		locationsView.setText(item.getLocationsFormattedString() != null ? item.getLocationsFormattedString() : "");
+//    		locationsView.setText(item.getLocationsFormattedString() != null ? item.getLocationsFormattedString() : "");
+    		locationsView.setText(item.getLocationObjectsFormattedString() != null ? item.getLocationObjectsFormattedString() : "");
     		
     	} else {
     		Log.i(this.getClass().getName(), "Got incorrect item list position: " + position);

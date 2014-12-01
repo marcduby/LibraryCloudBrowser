@@ -27,6 +27,7 @@ public class LibraryItem {
 	private String subTitle;
 	private List<String> authorNameList = new ArrayList<String>();
 	private List<String> locationList = new ArrayList<String>();
+	private List<LibraryItemLocation> itemLocationList = new ArrayList<LibraryItemLocation>();
 	private String authorNameString = null;
 	private String userNotes;
 	
@@ -57,6 +58,7 @@ public class LibraryItem {
 	 * @param locationString
 	 */
 	public void addLocation(String locationString) {
+		// add string location
 		if (this.locationList == null) {
 			this.locationList = new ArrayList<String>();
 		}
@@ -64,6 +66,20 @@ public class LibraryItem {
 		this.locationList.add(locationString);
 	}
 
+	/**
+	 * add a location object to the location object list
+	 * 
+	 * @param locationObject
+	 */
+	public void addLocationObject(LibraryItemLocation locationObject) {
+		// add object location
+		if (this.itemLocationList == null) {
+			this.itemLocationList = new ArrayList<LibraryItemLocation>();
+		}
+		
+		this.itemLocationList.add(locationObject);
+	}
+	
 	/**
 	 * returns strong with formatted line breaks
 	 * 
@@ -73,7 +89,7 @@ public class LibraryItem {
 		StringBuilder builder = new StringBuilder();
 		for (int i = 0; i < this.locationList.size(); i++) {
 			if (i > 0) {
-				builder.append("/n");
+				builder.append("\n");
 			}
 			builder.append(this.locationList.get(i));
 		}
@@ -81,6 +97,28 @@ public class LibraryItem {
 		return builder.toString();
 	}
 	
+	/**
+	 * returns location objects string with formatted line breaks
+	 * 
+	 * @return
+	 */
+	public String getLocationObjectsFormattedString() {
+		StringBuilder builder = new StringBuilder();
+		for (int i = 0; i < this.itemLocationList.size(); i++) {
+			if (i > 0) {
+				builder.append("\n===========\n");
+			}
+			builder.append(this.itemLocationList.get(i).getLocationName() + "\n" + this.itemLocationList.get(i).getCallNumber());
+		}
+		
+		return builder.toString();
+	}
+
+	/**
+	 * returns the author name as a string
+	 * 
+	 * @return
+	 */
 	public String getAuthorNameString() {
 		if (this.authorNameString == null) {
 			StringBuilder builder = new StringBuilder();
